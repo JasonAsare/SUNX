@@ -15,7 +15,7 @@ body{
 }
 
 .nav img{
-    width: 10%;
+    width: clamp(100px, 10%, 180px);
 }
 
 header{
@@ -23,7 +23,7 @@ header{
     width: 100%;
     background: rgba(0, 0, 0, 0.01);
     backdrop-filter: blur(10px);
-    height: 15%;
+    min-height: 80px;
 }
 
 header .nav{
@@ -59,15 +59,20 @@ nav .num{
 }
 
 .first{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    align-items: center;
     margin-top: 10%;
     color: #cacac9;
     width: 100%;
+    gap: 30px;
+    margin-left: 5%;
 }
 
 .first img{
-    width: 50%;
+    width: 100%;
+    max-width: 700px;
+    justify-self: center;
     padding-right: 13%;
 }
 
@@ -76,7 +81,7 @@ nav .num{
 }
 
 .info .l1{
-    font-size: 100px;
+    font-size: clamp(3rem, 8vw, 100px);
     font-weight: 600;
     color: #FFDE15;
 }
@@ -107,6 +112,7 @@ nav .num{
     margin-top: 10%;
     color: #cacac9;
     padding-left: 13%;
+    width: 100%;
 }
 
 .text h1{
@@ -118,19 +124,20 @@ nav .num{
 }
 
 footer{
-width: 100%;
-background: #0a0a0a;
-height: 80px;
-border: 2px solid #101010;
-margin-top: 5%;
+    width: 100%;
+    background: #0a0a0a;
+    height: 80px;
+    border: 2px solid #101010;
+    margin-top: 5%;
 }
 
 footer .info{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     color: #9f9e9f;
-    justify-content: space-evenly;
-    padding: 0px;
+    text-align: center;
+    gap: 20px;
+    padding: 0;
 }
 
 footer .info span{
@@ -139,16 +146,16 @@ footer .info span{
 
 .steps{
     margin-top: 5%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
+    margin-left: 10%;
 }
 
 .card1 svg,
 .card2 svg,
-.card3 svg {
+.card3 svg{
     color: #FFDE15;
     width: 40px;
     height: 40px;
@@ -164,21 +171,19 @@ footer .info span{
     justify-content: center;
     align-items: center;
     margin-top: 20%;
-    
 }
 
 .card1,
 .card2,
-.card3 {
-    width: 28.5%;
-    height: 450px;
+.card3{
+    width: 100%;
+    min-height: 450px;
     border: 1px solid #9f9e9f32;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
     background: #121212;
-    
 }
 
 .card1:hover,
@@ -201,7 +206,7 @@ footer .info span{
 
 .card1 p,
 .card2 p,
-.card3 p {
+.card3 p{
     margin-top: 5%;
     font-size: 1rem;
     color: #9f9e9f;
